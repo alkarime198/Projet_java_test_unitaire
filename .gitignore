@@ -1,0 +1,9 @@
+# Dossiers Eclipse
+.classpath
+.project
+.settings/
+
+# Fichiers compilés Java
+*.class
+bin/
+target/
