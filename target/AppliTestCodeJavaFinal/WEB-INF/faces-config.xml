@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
+    version="2.3">
+    
+     <navigation-rule>
+        <from-view-id>/inscription.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>connexion</from-outcome>
+            <to-view-id>/connexion.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/connexion.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>soumettreCode</from-outcome>
+            <to-view-id>/soumettreCode.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+</faces-config>

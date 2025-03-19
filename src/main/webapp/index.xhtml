@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Accueil - Banque Alkarime</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/code1.jpg'); /* Chemin vers votre image de fond */
+            background-size: cover; /* Ajuste l'image pour couvrir tout l'écran */
+            background-position: center; /* Centre l'image */
+            background-repeat: no-repeat; /* Évite de répéter l'image */
+            color: #333; /* Couleur de texte par défaut */
+        }
+
+        nav {
+            background-color: rgba(40, 55, 71, 0.8); /* Couleur de fond avec transparence */
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex; /* Utiliser flexbox pour l'alignement */
+            justify-content: space-around; /* Espacement entre les éléments */
+            padding: 10px 0; /* Espacement vertical */
+        }
+
+        nav a,
+        .button {
+            color: white;
+            text-align: center;
+            padding: 12px 20px; /* Ajustement de l'espacement des boutons */
+            text-decoration: none;
+            border-radius: 5px; /* Ajout de bords arrondis aux boutons */
+            transition: background-color 0.3s, transform 0.3s; /* Transition pour le hover */
+            border: 1px solid transparent; /* Bordure initialement transparente */
+        }
+
+        nav a:hover,
+        .button:hover {
+            background-color: #1a5276;
+            transform: scale(1.05); /* Légère augmentation lors du survol */
+            border: 1px solid white; /* Bordure blanche au survol */
+        }
+
+        .scrolling-text {
+            background-color: rgba(174, 214, 241, 0.9); /* Couleur de fond avec transparence */
+            color: #154360;
+            padding: 15px;
+            margin-top: 20px;
+            border: 1px solid #154360;
+            border-radius: 5px;
+            text-align: center; /* Centrage du texte */
+        }
+
+        footer {
+            background-color: rgba(40, 55, 71, 0.8); /* Couleur de fond avec transparence */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .welcome-panel, .about-panel, #contact-section {
+            max-width: 600px; /* Largeur maximale pour les panneaux */
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9); /* Couleur de fond avec transparence */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centrage du texte */
+        }
+
+        .welcome-panel h1, .about-panel h1 {
+            color: #1a5276;
+            margin-bottom: 20px;
+        }
+
+        .form-element {
+            width: 100%;
+            margin: 12px 0;
+        }
+
+        .form-element input,
+        .form-element textarea,
+        .form-element select {
+            border: 1px solid #ccc;
+            padding: 8px;
+            border-radius: 4px;
+            width: calc(100% - 16px); /* Ajustement de la largeur */
+        }
+
+        .form-element button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .form-element button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</h:head>
+
+<h:body>
+<!-- Menu de navigation -->
+<nav>
+    <a href="javascript:void(0);" onclick="showHome()">Accueil</a>
+    <a href="javascript:void(0);" onclick="showAbout()">À Propos</a>
+    <h:link value="Inscription" outcome="inscription.xhtml" styleClass="button" />
+    <h:link value="Connexion" outcome="connexion.xhtml" styleClass="button" />
+    <a href="javascript:void(0);" onclick="showContact()">Contact</a>
+</nav>
+
+<!-- Zone de texte défilante -->
+<div class="scrolling-text">
+    <marquee behavior="scroll" direction="left">
+        Bienvenue sur notre plateforme ALKARIME ! Profitez de nos services pour tester et exécuter votre code Java en ligne.
+    </marquee>
+</div>
+
+<!-- Section de bienvenue -->
+<div class="welcome-panel">
+    <h1>BIENVENUE SUR LA PLATEFORME TEST UNITAIRE ALKARIME</h1>
+    <p>Connectez-vous ou inscrivez-vous pour accéder à nos services.</p>
+</div>
+
+<!-- Section À Propos -->
+<div class="about-panel" style="display: none;">
+    <h1>À Propos de notre plateforme</h1>
+    <p>
+        La plateforme Alkarime est conçue pour permettre aux utilisateurs de tester et d'exécuter des codes Java en ligne. 
+        Elle offre un environnement sécurisé où vous pouvez soumettre votre code, le faire exécuter, et obtenir un retour immédiat sur sa performance et son efficacité. 
+        Que vous soyez un étudiant cherchant à valider vos compétences en programmation ou un développeur souhaitant tester des snippets de code, 
+        notre plateforme vous fournit tous les outils nécessaires pour améliorer votre expérience d'apprentissage et de développement.
+    </p>
+    <p>
+        En plus des tests de code, nous proposons des fonctionnalités avancées telles que l'analyse des performances, la gestion des erreurs et des suggestions d'optimisation pour 
+        vous aider à perfectionner votre code. Inscrivez-vous dès aujourd'hui et rejoignez notre communauté de développeurs passionnés !
+    </p>
+</div>
+
+<!-- Section Contact -->
+<div id="contact-section" class="about-panel" style="display:none;">
+    <h1>Contactez-nous</h1>
+    <p>
+        Pour toute question ou demande d'information, n'hésitez pas à nous contacter :
+    </p>
+    <ul style="list-style: none; padding: 0;">
+        <li>Email : moustapha1884@gmail.com</li>
+        <li>Téléphone : 776266017</li>
+        <li>Adresse : Golf sud, Guediawaye, Dakar</li>
+    </ul>
+</div>
+
+<!-- Pied de page -->
+<footer>
+    © 2024 Cheikh Moustapha Mbacke Alkarime. Tous droits réservés.
+</footer>
+
+<script>
+    function showAbout() {
+        document.querySelector('.welcome-panel').style.display = 'none';
+        document.querySelector('.about-panel').style.display = 'block';
+        document.querySelector('#contact-section').style.display = 'none';
+    }
+
+    function showHome() {
+        document.querySelector('.about-panel').style.display = 'none';
+        document.querySelector('.welcome-panel').style.display = 'block';
+        document.querySelector('#contact-section').style.display = 'none';
+    }
+
+    function showContact() {
+        document.querySelector('.welcome-panel').style.display = 'none';
+        document.querySelector('.about-panel').style.display = 'none';
+        document.querySelector('#contact-section').style.display = 'block';
+    }
+</script>
+</h:body>
+</html>

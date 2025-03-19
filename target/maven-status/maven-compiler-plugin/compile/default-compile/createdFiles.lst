@@ -1,0 +1,10 @@
+net\alkarime\service\TestService.class
+net\alkarime\service\UserService.class
+net\alkarime\entities\UserTU.class
+net\alkarime\bean\SoumettreCodeBean.class
+net\alkarime\destdb\HibernateTest.class
+net\alkarime\service\TestService$1.class
+net\alkarime\bean\UserBean.class
+net\alkarime\entities\SoumettreCode.class
+net\alkarime\service\StringJavaFileObject.class
+net\alkarime\service\ClassName.class

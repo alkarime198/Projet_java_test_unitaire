@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>net.alkarime</groupId>
+  <artifactId>AppliTestCodeJavaFinal</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>AppliTestCodeJavaFinal Maven Webapp</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+	  
+    
+       <!-- JPA (Java Persistence API) -->
+       <dependency>
+           <groupId>javax.persistence</groupId>
+           <artifactId>javax.persistence-api</artifactId>
+           <version>2.2</version>
+       </dependency>
+
+       <!-- Hibernate pour l'implémentation JPA -->
+     
+       <dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <version>5.5.6.Final</version>
+    <exclusions>
+        <exclusion>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+
+
+       <!-- PostgreSQL JDBC Driver -->
+       <dependency>
+           <groupId>org.postgresql</groupId>
+           <artifactId>postgresql</artifactId>
+           <version>42.7.3</version>
+       </dependency>
+
+       <!-- SLF4J pour le logging -->
+       <dependency>
+           <groupId>org.slf4j</groupId>
+           <artifactId>slf4j-api</artifactId>
+           <version>1.7.36</version>
+       </dependency>
+       <dependency>
+           <groupId>org.slf4j</groupId>
+           <artifactId>slf4j-simple</artifactId>
+           <version>1.7.36</version>
+           <scope>runtime</scope>
+       </dependency>
+
+       <!-- JUnit 5 pour les tests -->
+       <dependency>
+           <groupId>org.junit.jupiter</groupId>
+           <artifactId>junit-jupiter-api</artifactId>
+           <version>5.10.2</version>
+           <scope>test</scope>
+       </dependency>
+       <dependency>
+           <groupId>org.junit.jupiter</groupId>
+           <artifactId>junit-jupiter-engine</artifactId>
+           <version>5.10.2</version>
+           <scope>test</scope>
+       </dependency>
+	    <dependency>
+			    <groupId>org.mockito</groupId>
+			    <artifactId>mockito-core</artifactId>
+			    <version>5.0.0</version> <!-- Vérifiez la dernière version -->
+			    <scope>test</scope>
+			</dependency>
+			<dependency>
+			    <groupId>org.junit.jupiter</groupId>
+			    <artifactId>junit-jupiter</artifactId>
+			    <version>5.9.3</version> <!-- Vérifiez la dernière version -->
+			    <scope>test</scope>
+			</dependency>
+
+       <!-- Hibernate Validator pour la validation des entités -->
+       <dependency>
+           <groupId>org.hibernate.validator</groupId>
+           <artifactId>hibernate-validator</artifactId>
+           <version>6.1.7.Final</version>
+       </dependency>
+       
+       <!-- CDI avec javax.inject -->
+       <dependency>
+           <groupId>javax.inject</groupId>
+           <artifactId>javax.inject</artifactId>
+           <version>1</version>
+       </dependency>
+       <dependency>
+           <groupId>javax.enterprise</groupId>
+           <artifactId>cdi-api</artifactId>
+           <version>1.2</version>
+           <scope>provided</scope>
+       </dependency>
+       <!-- PrimeFaces -->
+       <dependency>
+           <groupId>org.primefaces</groupId>
+           <artifactId>primefaces</artifactId>
+           <version>13.0.4</version>
+       </dependency>
+       <dependency>
+           <groupId>com.sun.faces</groupId>
+           <artifactId>jsf-api</artifactId>
+           <version>2.2.8</version>
+       </dependency>
+       <dependency>
+           <groupId>com.sun.faces</groupId>
+           <artifactId>jsf-impl</artifactId>
+           <version>2.2.17</version>
+       </dependency>
+      
+
+       <dependency>
+           <groupId>commons-logging</groupId>
+           <artifactId>commons-logging</artifactId>
+           <version>1.2</version>
+           <!--   Version actuelle au moment de ma dernière mise à jour (janvier 2022)   -->
+       </dependency>
+       <dependency>
+           <groupId>javax</groupId>
+           <artifactId>javaee-api</artifactId>
+           <version>8.0</version>
+           <scope>provided</scope>
+       </dependency>
+       <dependency>
+           <groupId>javax.servlet</groupId>
+           <artifactId>javax.servlet-api</artifactId>
+           <version>4.0.1</version>
+           <!--  Remplacez par la dernière version disponible  -->
+           <scope>provided</scope>
+       </dependency>
+       
+       <dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		    <version>5.8.1</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.github.javaparser</groupId>
+		    <artifactId>javaparser-core</artifactId>
+		    <version>3.24.0</version>
+		</dependency>
+
+
+   </dependencies>
+
+
+  <build>
+    <finalName>AppliTestCodeJavaFinal</finalName>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.4.0</version>
+        </plugin>
+        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.3.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.3.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>3.4.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
